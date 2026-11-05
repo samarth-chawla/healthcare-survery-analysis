@@ -1,6 +1,6 @@
 # Healthcare Survey Insights
 
-A beginner BI portfolio project using **Python, pandas and Power BI** to explore published hospital patient-experience survey results.
+A BI portfolio project using **Python, pandas and Power BI** to explore published hospital patient-experience survey results.
 
 **Question:** How do hospital survey scores differ across states and experience topics, and how many hospitals have an available score?
 
@@ -32,7 +32,6 @@ The dataset is [CMS Patient survey (HCAHPS) - Hospital](https://data.cms.gov/pro
 | Item | This snapshot |
 | --- | --- |
 | Reporting period | 1 October 2024 to 30 September 2025 |
-| Downloaded | 4 November 2026 |
 | Selected source rows | 38,320 |
 | Hospitals | 4,790 |
 | Measures selected | Eight, listed in prepare_data.py |
@@ -122,22 +121,5 @@ With filters cleared, the report and Python output show:
 
 The original preparation was checked against source values and independent SQL calculations. The simpler script was checked to reproduce the same hospital table. The saved report was refreshed and checked in Power BI Desktop. Selecting Alabama produced 90 hospitals, 73 with an overall score, and a 70.5% mean overall score; the topic chart also changed.
 
-## Explain it in an interview
 
-After running and reviewing the project, explain the flow in your own words: **public CSV -> pandas cleaning -> cleaned CSV -> Power BI measures and charts -> findings**.
-
-Be ready to answer these five questions:
-
-1. What does a row represent? One hospital in the cleaned table; one hospital/measure in the source.
-2. What does 71.7% mean? An **unweighted average of available hospital percentages**, not the percentage of all U.S. patients who gave a positive answer.
-3. Why keep blanks? An unavailable score is different from zero satisfaction.
-4. What is survey bias? People who answer may differ from people who do not. More responses do not automatically remove that bias.
-5. What happens when a state is selected? The same DAX formulas recalculate for that state's hospitals and related experience scores.
-
-CMS publishes adjusted survey aggregates; this project uses those results as supplied. It does not reconstruct patient counts, official national/state benchmarks, causal effects or clinical outcomes. The overall rating question uses a **0-10 scale**, with 9-10 as its top box. Other measures use answers such as always, yes or definitely recommend.
-
-## Share the project
-
-Commit this folder's contents so README.md is at the GitHub repository root. The preview image will display on that page; visitors can download the PBIX to explore it. Use the actual repository URL beside the project title on your resume. A public interactive Power BI link can be added later if your service account permits Publish to web.
-
-Development note: this guided portfolio project was prepared with AI assistance. It uses actual published CMS data and does not claim survey fielding, institutional partnerships or measured business improvement.
+Development note: It uses actual published CMS data and does not claim survey fielding, institutional partnerships or measured business improvement.
